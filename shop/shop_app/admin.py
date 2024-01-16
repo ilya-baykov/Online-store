@@ -21,3 +21,4 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['available', 'price', 'update']
     list_editable = ['price', 'available']
     prepopulated_fields = {'slug': ('name',)}
+    list_per_page = 10
