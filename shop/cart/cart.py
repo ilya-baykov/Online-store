@@ -40,6 +40,9 @@ class Cart:
             del self.cart[product_id]
             self.save()
 
+    def get_total_price(self):
+        return sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
+
     def __iter__(self):
         """ Прокрутить товарные позиции корзины в цикле
             И получить товары из базы данных
